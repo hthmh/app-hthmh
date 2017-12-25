@@ -1,1 +1,71 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>vadmin</title><link rel="shortcut icon" href=./favicon.ico><link href=./static/css/app.f78cfc2c9754373ce82262404da91e02.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.a0017aa31edc4845a543.js></script><script type=text/javascript src=./static/js/vendor.18290898c2be52c2e9d8.js></script><script type=text/javascript src=./static/js/app.1679cc5ad09c4c56bc1d.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播</title>
+    <link rel="stylesheet" href="mySlider.css">
+    <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+</head>
+
+<body>
+    <div class="myslider"></div>
+    <button class="prev">上一个</button>
+    <button class="next">下一个</button>
+</body>
+<script src="mySlider.js"></script>
+<script>
+    var data = {
+        list: [
+            {
+                bg: 'img/1.png',
+                title: "1标题",
+                desc: "刷卡机大富科技时代峰峻看电视呢父级撒你点击开发"
+            },
+            {
+                bg: 'img/2.png',
+                title: "2标题",
+                desc: "刷卡机大富科技时代峰峻看电视呢父级撒你点击开发"
+            },
+            {
+                bg: 'img/4.png',
+                title: "3标题",
+                desc: "刷卡机大富科技时代峰峻看电视呢父级撒你点击开发"
+            },
+            {
+                bg: 'img/5.png',
+                title: "4标题",
+                desc: "刷卡机大富科技时代峰峻看电视呢父级撒你点击开发"
+            },
+            {
+                bg: 'img/6.jpg',
+                title: "5标题",
+                desc: "刷卡机大富科技时代峰峻看电视呢父级撒你点击开发"
+            },
+            {
+                bg: 'img/7.jpg',
+                title: "6标题",
+                desc: "刷卡机大富科技时代峰峻看电视呢父级撒你点击开发"
+            }
+        ],
+        status: 0,
+        msg: "成功"
+    };
+
+    var slider = $(".myslider").mySlider({
+        list: data.list,
+        click: function (index) {
+            console.log(data.list[index])//索引值
+        }
+    });
+    $(".prev").click(function () {
+        console.log(slider.prev())//索引值
+    })
+    $(".next").click(function () {
+        console.log(slider.next())//索引值
+    })
+</script>
+
+</html>
